@@ -3,7 +3,7 @@ set :repository,  '.'
 set :deploy_to,   "/tmp/#{application}"
 set :deploy_via,  :copy
 
-set :user, 'root'
+set :user, 'funamushi'
 set :use_sudo, false
 set :ssh_options, port: 21631
 
@@ -16,7 +16,7 @@ namespace :puppet do
       task role_name, roles => role_name do
         deploy.update
 
-        run "puppet apply --modulepath=#{current_path}/modules:#{current_path}/roles #{current_path}/manifests/#{role_name}.pp"
+        sudo "puppet apply --modulepath=#{current_path}/modules:#{current_path}/roles #{current_path}/manifests/#{role_name}.pp"
       end
     end
   end
