@@ -1,13 +1,13 @@
-set :application, 'hadashikick-puppet'
+set :application, 'funamushi-puppet'
 set :repository,  '.'
 set :deploy_to,   "/tmp/#{application}"
 set :deploy_via,  :copy
 
 set :user, 'root'
 set :use_sudo, false
+set :ssh_options, port: 21631
 
-# role :mail, 'mail.hadashikick.jp'
-role :app,  'hadashikick.jp'
+role :app, '219.94.235.57'
 
 namespace :puppet do
   namespace :apply do
