@@ -7,12 +7,11 @@ class nginx::config {
     require => Package['nginx'],
   }
 
-
-  file { '/var/www':
-    ensure  => directory,
-    owner   => nginx,
-    group   => nginx,
-    mode    => 0755,
+  file { '/usr/share/nginx/html/index.html':
+    owner   => root,
+    group   => root,
+    mode    => 0644,
+    content => template('nginx/index.html'),
     require => Package['nginx'],
   }
 

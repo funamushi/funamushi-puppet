@@ -17,7 +17,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.vm.box_url = "http://domain.com/path/to/above.box"
   config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/centos-64-x64-vbox4210.box"
 
-  config.vm.hostname = "funamushi.local"
+  config.vm.hostname = "funamushi"
   config.vm.network :private_network, ip: "192.168.0.101"
 
   # config.vm.provision :shell, inline: "if [ ! $(grep single-request-reopen /etc/resolv.conf) ]; then echo 'options single-request-reopen' >> /etc/resolv.conf && service network restart; fi"
