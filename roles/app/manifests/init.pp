@@ -1,8 +1,6 @@
 class app {
-  $ssh_port = 21631
-  $ports = [80, $ssh_port]
+  $ports = [80]
 
-  include ::sshd
   include ::base
   include ::nginx
   include ::iptables
