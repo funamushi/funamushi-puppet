@@ -25,9 +25,9 @@ RSpec.configure do |c|
       c.host  = host
       options = Net::SSH::Config.for(c.host)
       user    = options[:user] || Etc.getlogin
-      
-      vagrant_up = `vagrant up mail`
-      config = `vagrant ssh-config mail`
+
+      vagrant_up = `vagrant up`
+      config = `vagrant ssh-config`
       if config != ''
         config.each_line do |line|
           if match = /HostName (.*)/.match(line)
@@ -41,7 +41,7 @@ RSpec.configure do |c|
           end
         end
       end
-    
+
       c.ssh   = Net::SSH.start(c.host, user, options)
     end
   end
