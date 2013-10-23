@@ -5,7 +5,6 @@ set :deploy_via,  :copy
 
 set :user, 'funamushi'
 set :use_sudo, false
-set :ssh_options, port: 21631
 
 role :app, '219.94.235.57'
 
