@@ -7,9 +7,17 @@ class nginx::config {
     require => Package['nginx'],
   }
 
+  file { '/usr/share/nginx/html':
+    ensure  => directory,
+    owner   => funamushi,
+    group   => funamushi,
+    mode    => 0755,
+    require => Package['nginx'],
+  }
+
   file { '/usr/share/nginx/html/index.html':
-    owner   => root,
-    group   => root,
+    owner   => funamushi,
+    group   => funamushi,
     mode    => 0644,
     content => template('nginx/index.html'),
     require => Package['nginx'],
