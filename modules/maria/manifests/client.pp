@@ -3,5 +3,5 @@ class maria::client {
   include maria::client::install
 
      Class['maria::yumrepo']
-  -> Class['maria::server::install']
+  -> Class['maria::client::install']
 }
