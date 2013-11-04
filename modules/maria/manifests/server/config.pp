@@ -20,4 +20,12 @@ class maria::server::config {
     content => template('maria/server.cnf'),
     require => File['/etc/my.cnf.d'],
   }
+
+  file { '/etc/my.cnf.d/mysql-clients.cnf':
+    owner   => root,
+    group   => root,
+    mode    => 0644,
+    content => template('maria/mysql-clients.cnf'),
+    require => File['/etc/my.cnf.d'],
+  }
 }
