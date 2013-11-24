@@ -9,7 +9,7 @@ class app::npm {
   n::npm {
     ['brunch',
      'bower',
-     'forever',
+     'pm2',
      ]:
     require => N::Nodejs[$nodejs_version],
   }
