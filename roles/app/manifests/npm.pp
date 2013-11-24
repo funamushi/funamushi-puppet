@@ -6,9 +6,11 @@ class app::npm {
     require => Class['n']
   }
 
-  n::npm { 'grunt-cli':
-  }
-
-  n::npm { 'bower':
+  n::npm {
+    ['brunch',
+     'bower',
+     'forever',
+     ]:
+    require => N::Nodejs[$nodejs_version],
   }
 }
