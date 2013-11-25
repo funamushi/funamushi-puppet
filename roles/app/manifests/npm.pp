@@ -10,6 +10,7 @@ class app::npm {
     ['brunch',
      'bower',
      'pm2',
+     'coffee-script',
      ]:
     require => N::Nodejs[$nodejs_version],
   }
